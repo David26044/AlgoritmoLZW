@@ -8,6 +8,7 @@ La ejecución de las aplicaciones se realiza mediante dos archivos main: uno par
 Luego de agregar las IPs, debes presionar el botón "Enviar mensaje" para que comience el proceso de codificación y decodificación. El mensaje codificado será enviado y el decodificador lo irá procesando, mostrando el texto decodificado a medida que recibe los datos.
 
 #traslate
+
 This repository contains two applications that implement the functionalities of the LZW algorithm: encoding and decoding.
 
 To change the text to be encoded or decoded, you need to modify the contents of the file data/texto.txt.
