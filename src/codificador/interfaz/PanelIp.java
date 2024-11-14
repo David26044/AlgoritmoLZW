@@ -67,6 +67,7 @@ public class PanelIp extends JPanel implements ActionListener {
         String ip = txtIp.getText();
         if (!ip.isEmpty()) {
             listaModel.addElement(ip); // Añadir la IP al modelo de la lista
+            ctrl.agregarIp(txtIp.getText());
             txtIp.setText(""); // Limpiar el campo de texto
         }
     }
@@ -75,7 +76,6 @@ public class PanelIp extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnAgregar) {
             agregarIp();  // Llama al método agregarIp para añadir la IP a la lista y limpiar el campo
-            ctrl.agregarIp(txtIp.getText());
         }
         if (e.getSource() == btnEmpezar) {
             ctrl.iniciar();

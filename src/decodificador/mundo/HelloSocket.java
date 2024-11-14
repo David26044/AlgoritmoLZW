@@ -31,7 +31,7 @@ import javax.swing.JOptionPane;
         /* Client:Data >> Socket >> Server */
         public void socket(String msg) {
             try {
-                Socket client = new Socket("172.16.128.136", 5050); // portSend 5050
+                Socket client = new Socket("172.16.128.136", 5000); // portSend 5000
                 DataOutputStream outBuffer = new DataOutputStream(client.getOutputStream());
                 outBuffer.writeUTF(msg);
                 client.close();
@@ -55,8 +55,8 @@ import javax.swing.JOptionPane;
                 while (true) {
                     socket = serverSocket.accept();
                     inDataBuffer = new DataInputStream(socket.getInputStream());
-                    String msg = inDataBuffer.readUTF();
-                    decodificador.recibirEntrada(Integer.parseInt(msg));
+                    int msg = inDataBuffer.readInt();
+                    decodificador.recibirEntrada(msg);
                     socket.close();
                 }
             } catch (IOException e) {

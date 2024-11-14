@@ -3,20 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/decodificador/interfaz/PanelDecodificacion.java</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/codificador/interfaz/PanelIp.java</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/codificador/controlador/Controlador.java</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/decodificador/mundo/HelloSocket.java</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/decodificador/interfaz/Interfaz.java</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/codificador/mundo/Codificacion.java</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/codificador/interfaz/InterfazApp.java</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/codificador/mundo/HelloSocket.java</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/decodificador/controlador/Controlador.java</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/codificador/mundo/Ascii.java</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/decodificador/mundo/Ascii.java</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/data/texto.txt</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/data/asciiComp.txt</file>
-            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/LZW/src/decodificador/mundo/Decodificacion.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/AlgoritmoLZW/data/texto.txt</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/AlgoritmoLZW/data/asciiComp.txt</file>
         </group>
     </open-files>
 </project-private>

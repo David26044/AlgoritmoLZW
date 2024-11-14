@@ -31,7 +31,7 @@ public class Codificacion {
 
         for (int i = 0; i <= texto.length() - 1; i++) {
             if (i == texto.length() - 1) {
-                socket.socket(String.valueOf(diccionario.getIndex(pe))); //si es la ultima iteracion se codifica pe
+                socket.socket(diccionario.getIndex(pe)); //si es la ultima iteracion se codifica pe
                 break;
             }
             se = textoArr[i + 1];
@@ -47,12 +47,12 @@ public class Codificacion {
             ps = pe + se;
             if (!diccionario.contains(ps)) {
                 diccionario.put(ps);
-                socket.socket(String.valueOf(diccionario.getIndex(pe)));
+                socket.socket(diccionario.getIndex(pe));
                 pe = se;
             } else {
                 pe = ps;
             }
-            Thread.sleep(100);
+            Thread.sleep(100); // 100 ms, ajusta según sea necesario
         }
 
     }

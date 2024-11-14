@@ -1,16 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package decodificador.mundo;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,72 +12,52 @@ import javax.swing.JOptionPane;
  */
 public class Ascii {
 
-    private List<String> tabla;
+    private HashMap<Integer, String> tabla;
     private String texto;
+    private int nextIndex;  // Índice para los nuevos valores agregados
 
     public Ascii() {
-        tabla = new ArrayList<String>();
+        tabla = new HashMap<>();
         texto = "";
-        leerTxtTabla();
-        tabla.set(10, "\n");
+        llenarTablaAscii();
+        nextIndex = 256;  // Inicia en 256 para agregar nuevos valores después de la tabla ASCII estándar
     }
 
-    private void leerTxtTabla() {
-    try {
-        // Usamos InputStreamReader con UTF-8
-        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("data/asciiComp.txt"), "UTF-8"));
-        String linea = br.readLine();
-        while (linea != null) {
-            tabla.add(linea);
-            linea = br.readLine();
+    private void llenarTablaAscii() {
+        // Crea una tabla ASCII de 0 a 255
+        for (int i = 0; i < 256; i++) {
+            tabla.put(i, String.valueOf((char) i));
         }
-        br.close();
-    } catch (IOException e) {
-        JOptionPane.showMessageDialog(null, e.getMessage());
     }
-}
 
-    public boolean contains(String c) {
-        int i = 0;
-        for (String s : tabla) {
-            if (c.equals(s)) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    public int getIndex(String c){
-        int i = 0;
-        for (String s : tabla) {
-            if (c.equals(s)) {
+    public int getIndex(String c) {
+        // Busca el índice de la cadena en la tabla
+        for (int i = 0; i < nextIndex; i++) {
+            if (c.equals(tabla.get(i))) {
                 return i;
             }
-            i++;
         }
         return -1;
     }
 
+    public boolean contains(String c) {
+        return tabla.containsValue(c);
+    }
+
     public String getCode(int index) {
-        if (index >= tabla.size()) {
-            return null;
-        }
         return tabla.get(index);
     }
 
     public void put(String c) {
-        tabla.add(c);
+        // Añade un nuevo valor con un índice único si no existe en la tabla
+        if (!tabla.containsValue(c)) {
+            tabla.put(nextIndex, c);
+            nextIndex++;  // Incrementa el índice para la próxima entrada
+        }
     }
 
-    public int length(){
-        return tabla.size();
-    }
-    
     public String getTexto() {
         return texto;
-    }   
-    
-    public String getLast(){
-        return tabla.getLast();
     }
 }
+
